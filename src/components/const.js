@@ -1,0 +1,2 @@
+export const WEATHER_SUCCESS = 'WEATHER_SUCCESS';
+export const WEATHER_FAIL = 'WEATHER_FAIL';

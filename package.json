@@ -1,0 +1,143 @@
+{
+  "name": "react-base-kit",
+  "version": "1.0.0",
+  "description": "A base framework and kit for developing react app easily and quickly",
+  "main": "dist/index.js",
+  "files": [
+    "dist/*"
+  ],
+  "scripts": {
+    "check": "npm run lint && npm run styleLint",
+    "lint": "better-npm-run lint",
+    "styleLint": "better-npm-run styleLint",
+    "commitLint": "npx babel-node ./scripts/commitlint/index.js",
+    "lintStaged": "lint-staged",
+    "build": "better-npm-run build",
+    "build:dev": "better-npm-run build:dev",
+    "build:ana": "better-npm-run build:ana",
+    "mock": "nodemon mock/index.js",
+    "release": "npx babel-node ./build/release/index.js"
+  },
+  "betterScripts": {
+    "lint": "eslint --ext .js,.jsx ./src/",
+    "styleLint": "stylelint ./src/**/*.less",
+    "build": {
+      "command": "webpack --config=build/webpackBuild.config.babel.js",
+      "env": {
+        "NODE_ENV": "production",
+        "API_ENV": "prod"
+      }
+    },
+    "build:dev": {
+      "command": "webpack-dev-server -w --config=build/webpackBuild.config.babel.js",
+      "env": {
+        "NODE_ENV": "development",
+        "API_ENV": "mock"
+      }
+    },
+    "build:ana": {
+      "command": "webpack-dev-server -w --config=build/webpackBuild.config.babel.js",
+      "env": {
+        "NODE_ENV": "development",
+        "API_ENV": "mock",
+        "ANA_ENV": "analytics"
+      }
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,tx,tsx}": "eslint",
+    "*.{less,css}": "stylelint"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "npm run test",
+      "pre-commit": "npm run lintStaged",
+      "commit-msg": "npm run commitLint"
+    }
+  },
+  "author": "clownvary",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "0.21.1",
+    "cpx": "^1.5.0",
+    "jquery": "3.4.1",
+    "lodash": "4.17.15",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "react-redux": "7.1.1",
+    "react-router-dom": "5.1.2",
+    "redux": "4.0.4",
+    "redux-thunk": "2.3.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "7.5.5",
+    "@babel/core": "7.5.5",
+    "@babel/node": "7.5.5",
+    "@babel/plugin-proposal-class-properties": "7.5.5",
+    "@babel/plugin-transform-runtime": "7.11.5",
+    "@babel/preset-env": "7.5.5",
+    "@babel/preset-react": "7.0.0",
+    "@babel/runtime": "7.11.2",
+    "@types/jest": "24.0.15",
+    "@types/lodash": "4.14.158",
+    "@types/react": "17.0.0",
+    "@types/react-redux": "7.1.1",
+    "@wojtekmaj/enzyme-adapter-react-17": "0.4.1",
+    "autoprefixer": "9.6.1",
+    "babel-eslint": "10.0.3",
+    "babel-jest": "23.6.0",
+    "babel-loader": "8.0.6",
+    "babel-plugin-add-module-exports": "1.0.2",
+    "better-npm-run": "0.1.1",
+    "cache-loader": "4.1.0",
+    "chalk": "4.1.0",
+    "child-process-promise": "2.2.1",
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "3.2.0",
+    "cssnano": "4.1.10",
+    "enzyme": "3.11.0",
+    "enzyme-to-json": "3.6.1",
+    "eslint": "6.2.2",
+    "eslint-config-airbnb": "18.0.1",
+    "eslint-config-prettier": "6.11.0",
+    "eslint-import-resolver-webpack": "0.11.1",
+    "eslint-plugin-babel": "5.3.0",
+    "eslint-plugin-import": "2.22.1",
+    "eslint-plugin-jest": "22.15.2",
+    "eslint-plugin-jsx-a11y": "6.2.3",
+    "eslint-plugin-react": "7.22.0",
+    "eslint-plugin-prettier": "3.1.4",
+    "eslint-plugin-react-hooks": "4.0.4",
+    "file-loader": "4.2.0",
+    "html-webpack-plugin": "3.2.0",
+    "husky": "4.2.5",
+    "lint-staged": "10.5.1",
+    "prettier": "2.0.5",
+    "jest": "24.9.0",
+    "jest-watch-typeahead": "0.4.0",
+    "json-server": "0.15.1",
+    "less": "3.10.3",
+    "less-loader": "5.0.0",
+    "mini-css-extract-plugin": "0.8.0",
+    "nodemon": "^2.0.6",
+    "optimize-css-assets-webpack-plugin": "5.0.3",
+    "postcss-loader": "3.0.0",
+    "progress-bar-webpack-plugin": "1.12.1",
+    "readline-sync": "1.4.10",
+    "regenerator-runtime": "0.13.3",
+    "semver": "7.1.1",
+    "speed-measure-webpack-plugin": "1.3.1",
+    "style-loader": "1.0.0",
+    "stylelint": "13.6.0",
+    "stylelint-config-standard": "18.2.0",
+    "stylelint-config-prettier": "7.0.0",
+    "stylelint-config-idiomatic-order": "8.0.0",
+    "stylelint-prettier": "1.1.2",
+    "ts-loader": "6.0.4",
+    "typescript": "3.5.3",
+    "webpack": "4.41.4",
+    "webpack-bundle-analyzer": "3.6.0",
+    "webpack-cli": "3.3.7",
+    "webpack-dev-server": "3.8.0"
+  }
+}

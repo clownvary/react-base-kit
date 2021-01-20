@@ -1,0 +1,17 @@
+{
+    "statusCode": "200",
+    "responseBody": {
+        "responseInfo": {
+            "correlationId": "",
+            "reasons": [
+                {
+                    "code": "000",
+                    "exAttrKeys": "",
+                    "exAttrValues": [],
+                    "type": 0
+                }
+            ]
+        },
+        "serviceId": ""
+    }
+}
