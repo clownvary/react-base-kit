@@ -1,4 +1,4 @@
-import isPromise from './isPromise';
+import isPromise from '../utils/common/isPromise';
 
 function createThunkMiddleware(extraArgument) {
   return ({ dispatch, getState }) => (next) => (action) => {
@@ -12,7 +12,6 @@ function createThunkMiddleware(extraArgument) {
       }
       return result;
     }
-
     return next(action);
   };
 }

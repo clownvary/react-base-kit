@@ -18,6 +18,13 @@ const config = {
     contentBase: path.resolve(rootPath, 'dist'),
     hot: true,
     open: false,
+    proxy: {
+      '/api': {
+        target: 'http://localhost:9992',
+        // pathRewrite: { '^/others/api': '/api', '^/test/api': '/api' },
+      },
+    },
+    // historyApiFallback: true,
   },
   output: {
     filename: '[name].[hash].js',

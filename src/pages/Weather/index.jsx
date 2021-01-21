@@ -3,12 +3,12 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchWeatherAsyncAction } from './action';
+import { getWeatherAction } from './action';
 import './style.less';
 
 export class Weather extends React.PureComponent {
   handleClick = () => {
-    this.props.fetchWeatherAsyncAction();
+    this.props.getWeatherAction();
   };
 
   render() {
@@ -43,6 +43,6 @@ export default connect(
     weather: state.weather,
   }),
   {
-    fetchWeatherAsyncAction,
+    getWeatherAction,
   },
 )(Weather);

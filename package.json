@@ -60,6 +60,8 @@
   "dependencies": {
     "axios": "0.21.1",
     "cpx": "^1.5.0",
+    "history": "^5.0.0",
+    "immer": "^8.0.1",
     "jquery": "3.4.1",
     "lodash": "4.17.15",
     "react": "17.0.1",
@@ -67,6 +69,7 @@
     "react-redux": "7.1.1",
     "react-router-dom": "5.1.2",
     "redux": "4.0.4",
+    "redux-actions": "^2.6.5",
     "redux-thunk": "2.3.0"
   },
   "devDependencies": {

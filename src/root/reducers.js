@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
-import weather from '../components/reducer';
+
+import weather from '../pages/Weather/reducer';
 
 const rootReducer = combineReducers({
   weather,
