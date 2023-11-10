@@ -58,7 +58,7 @@
   "author": "clownvary",
   "license": "MIT",
   "dependencies": {
-    "axios": "0.21.1",
+    "axios": "1.6.0",
     "cpx": "^1.5.0",
     "history": "^5.0.0",
     "immer": "^8.0.1",
